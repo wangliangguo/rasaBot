@@ -1,9 +1,9 @@
 # rasaBot
 
-1. FAQ机器人：
+基于rasa的[任务型对话机器人开发](https://zhuanlan.zhihu.com/c_1287692263972048896)
 
-    git checkout faq
 
-2. 上下文机器人：
 
-　　 git checkout context
+1. 上下文机器人
+
+git checkout v1contextual
