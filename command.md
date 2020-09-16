@@ -9,3 +9,8 @@ git tag -d fag
 检出tag:
 
 git checkout faq
+
+
+推送所有tags:
+
+git push --tags
