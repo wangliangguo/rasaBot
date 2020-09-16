@@ -1,0 +1,21 @@
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: zh
+pipeline:
+  - name: JiebaTokenizer
+  - name: MitieNLP
+    model: data/total_word_feature_extractor_zh.dat
+  - name: RegexFeaturizer
+  - name: MitieFeaturizer
+  - name: DIETClassifier
+  - name: ResponseSelector
+    epochs: 100
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  - name: MemoizationPolicy
+  - name: KerasPolicy
+  - name: MappingPolicy
+  - name: FormPolicy
+

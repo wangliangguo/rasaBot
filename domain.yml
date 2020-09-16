@@ -1,0 +1,43 @@
+intents:
+  - greet
+  - goodbye
+  - faq
+  - contact_human
+  - inform
+
+
+actions:
+   - respond_faq
+
+forms:
+  - contact_form
+
+
+entities:
+  - phone
+  - name
+
+
+slots:
+  name:
+    type: unfeaturized
+  phone:
+    type: unfeaturized
+
+
+
+responses:
+  utter_greet:
+  - text: "你好，请问有什么可以帮你"
+  utter_goodbye:
+  - text: "再见"
+  utter_ask_name:
+  - text: "请问怎么称呼你"
+  utter_ask_phone:
+  - text: "请问你的电话号码是多少"
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
