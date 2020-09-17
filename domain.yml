@@ -1,13 +1,15 @@
 intents:
-  - greet
+  - greet:  {triggers: action_greet}
   - goodbye
   - faq
   - contact_human
   - inform
-
+  - explain
+  - out_of_scope
 
 actions:
    - respond_faq
+   - action_greet
 
 forms:
   - contact_form
@@ -17,13 +19,17 @@ entities:
   - phone
   - name
 
-
 slots:
   name:
-    type: unfeaturized
+    type: categorical
   phone:
-    type: unfeaturized
+    type: categorical
 
+  requested_slot:
+    type: categorical
+    values:
+    - name
+    - phone
 
 
 responses:
@@ -35,6 +41,14 @@ responses:
   - text: "请问怎么称呼你"
   utter_ask_phone:
   - text: "请问你的电话号码是多少"
+  utter_explain_why_name:
+  - text: "我们需要记录每一个联系我们的客户"
+  utter_explain_why_phone:
+  - text: "我们需要电话号码联系您"
+  utter_out_of_scope:
+  - text: "对不起，我还是婴儿，不知道你在说什么"
+
+
 
 
 

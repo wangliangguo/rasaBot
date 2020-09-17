@@ -11,21 +11,6 @@ from typing import Any, Text, Dict, List
 #
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
-
 from rasa_sdk.forms import FormAction
 
 class SalesForm(FormAction):
@@ -50,3 +35,13 @@ class SalesForm(FormAction):
         dispatcher.utter_message("好的，我们的人员会尽快和联系您")
         return []
 
+from rasa_sdk import Action
+from rasa_sdk.events import UserUtteranceReverted
+
+class ActionGreetUser(Action):
+    """Revertible mapped action for utter_greet"""
+    def name(self):
+        return "action_greet"
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_template("utter_greet", tracker)
+        return [UserUtteranceReverted()]
