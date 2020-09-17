@@ -12,3 +12,8 @@ git checkout v1contextual
 
 链接: https://pan.baidu.com/s/1fdk5gI2Rva_TGfq6y6RSIQ
 提取码: 9ujn
+
+
+2. 增加意外输入与错误处理
+
+git checkout v2errorhanding
